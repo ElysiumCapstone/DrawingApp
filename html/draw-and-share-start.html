@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="../reset.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+	<title>Draw!</title>
+</head>
+<body>
+	<div>
+		<img id="treeImage" src="../assets/treePicture.png">
+	</div>
+
+	<div>
+		<img id="flowers" src="../assets/flowers.png">
+	</div>
+
+	<canvas id="canvas"></canvas>
+		
+
+	<div id="colorPalette">
+		<div id="topButtons">
+		<span><button id="undo" onclick="undoButton()"></button></span>
+		<span><button id="redo" onclick="redoButton()"></button></span>
+		<span><button id="trash" onclick="trashScreenOn()"></button></span>
+		</div>
+		
+		<div>
+		<button id="showStencils" onclick="stencilScreenOn()"></button>
+		</div>
+
+		<img id="stencilPreview" src="../assets/stencilPreview.png">
+
+		<div>
+			<span><button id="redColor" value="#F7325E"></button><button id="pinkColor" value="#F96574"></button></span>
+		</div>
+
+		<div>
+			<span><button id="orangeColor" value="#FFB629"></button><button id="yellowColor" value="#ECD12E"></button></span>
+		</div>
+		
+		<div>
+			<span><button id="greenColor" value="#A4C963"></button><button id="mintColor" value="#5CBF9F"></button></span>
+		</div>
+		
+		<div>
+			<span><button id="blueColor" value="#75C9E3"></button><button id="purpleColor" value="#8B699B"></button></span>
+		</div>
+
+		<div>
+			<span><button id="whiteColor" value="#FFFFFF"></button><button id="blackColor" value="#000000"></button></span>
+		</div>
+
+		<input type="range" id="sizeSlider" min="1" max="10" value="3">
+
+		<button id="completeButton" onclick="checkCompleteOn()">COMPLETE</button>
+		
+		
+	</div>
+
+	<div id="completeScreen">
+		<div id="completeDiv">
+			<div id="drawingFinal"><image id="creatureFinal"></image></div>
+			<strong id="nameText" style="font-family: 'Heebo'; color:white; font-size: 25px;">Name Your Creature:</strong>
+		
+			<div>
+			<input type="text" id="creatureName"></input>
+			</div>
+	
+			<div>
+				<span><button id="downloadLink" onclick="exportCanvasAsPNG()">Download</button></span>
+				<span><button id="finishButton" onclick="completeScreenOff()">Finish</button></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="stencilScreen">
+		<button class="stencils" id="removeStencil" onclick="removeStencil()">No Stencil</button>
+
+		<div id="column1">
+			<div>
+				<img class="stencilImages" id="iguanaImg" src="../assets/Iguana.png">
+				<button class="stencils" id= "iguanaStencil" value="Iguana">+</button>
+			</div>
+
+			<div>
+				<img class="stencilImages" id="frogImg" src="../assets/Frog.png">
+				<button class="stencils" id= "frogStencil" value="Frog">+</button>
+			</div>
+
+			<div>
+				<img class="stencilImages" id="jaguarImg" src="../assets/Jaguar.png">
+				<button class="stencils" id= "jaguarStencil" value="Jaguar">+</button>
+			</div>
+		</div>
+
+		<div id="column2">
+			<div>
+				<img class="stencilImages" id="monkeyImg" src="../assets/Monkey.png">
+				<button class="stencils" id= "monkeyStencil" value="Monkey">+</button>
+			</div>
+
+			<div>
+				<img class="stencilImages" id="slothImg" src="../assets/Sloth.png">
+				<button class="stencils" id= "slothStencil" value="Sloth">+</button>
+			</div>
+
+			<div>
+				<img class="stencilImages" id="toucanImg" src="../assets/Toucan.png">
+				<button class="stencils" id= "toucanStencil" value="Toucan">+</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="trashScreen">
+		<p style="font-size: 24px">Are you sure you want to <span style="font-weight: 900;">delete</span> this drawing?</p>
+		<div>
+			<button id="trashYes" onclick="trashDrawing()">Delete</button>
+			<button id="trashNo" onclick="trashScreenOff()">Keep Drawing</button>
+		</div>
+	</div>
+	
+	<div id="completeCheckScreen">
+		<p style="font-size: 24px">Are you sure you are <span style="font-weight: 900">completed</span> with this drawing?</p>
+		<div>
+			<button id="completeYes" onclick="completeWasChecked()">Complete</button>
+			<button id="completeNo" onclick="checkCompleteOff()">Keep Drawing</button>
+		</div>
+	</div>
+	<div id="overlayBackground"></div>
+
+	<p id="drawingList"></p>
+	<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+	<script src = "../src/draw.js">
+	</script>
+	
+</body>
+</html>

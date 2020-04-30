@@ -1,0 +1,35 @@
+{
+  "name": "drawingapp",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.9.0"
+  },
+  "description": "drawing app for capstone",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JordynA97/CapDrawingApp.git"
+  },
+  "author": "Jordyn Antinore and Wyatt Lynch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JordynA97/CapDrawingApp/issues"
+  },
+  "homepage": "https://github.com/JordynA97/CapDrawingApp#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
