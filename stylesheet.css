@@ -436,7 +436,7 @@ label{
 
 
 #completeDiv{
-   background-image: url("export.png");
+   background-image: url("/DrawingApp/assets/export.png");
    background-size: 100% 100%;
    background-repeat: no-repeat;
    background-position: center;
